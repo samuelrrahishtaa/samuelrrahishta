@@ -16,7 +16,7 @@ const ADMIN_CREDENTIALS = {
 
 // Serve homepage.html at root URL
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../homepage.html'));
+  res.sendFile(path.join(__dirname, '../homepage.html'));
 });
 // Login endpoint
 app.post('/api/login', (req, res) => {
