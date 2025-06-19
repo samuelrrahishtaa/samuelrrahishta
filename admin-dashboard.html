@@ -144,7 +144,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Load admin data
-            fetch('http://localhost:5000/api/admin/data')
+            fetch('/api/admin/data')
                 .then(response => response.json())
                 .then(data => {
                     // Update stats
