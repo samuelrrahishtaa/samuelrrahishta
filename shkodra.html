@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Shkodra - Albania's Northern Gem</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/shkodra.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/homepage.html" class="nav-logo">Discover Albania</a>
+            <div class="nav-links">
+                <a href="/homepage.html" class="nav-link">Home</a>
+                <a href="/destinations.html" class="nav-link">Destinations</a>
+                <a href="/about.html" class="nav-link">About</a>
+                <a href="/contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Shkodra</h1>
+            <p>Albania's historic northern gem where culture, nature and adventure meet</p>
+            <a href="#explore" class="btn">Explore Shkodra</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="container" id="explore">
+        <div class="about-section">
+            <div class="about-text">
+                <h2>The Cultural Capital of Northern Albania</h2>
+                <p>Shkodra, one of Albania's oldest and most historic cities, sits majestically between the Albanian Alps and the vast Lake Shkodra. With roots dating back to the 4th century BC, this city has been a crossroads of civilizations and cultures throughout its long history.</p>
+                <p>Known as the "Gateway to the Albanian Alps," Shkodra offers visitors a perfect blend of cultural heritage, natural beauty, and vibrant urban life. The city's architecture reflects its diverse past, with influences from Illyrian, Venetian, Ottoman, and communist eras.</p>
+                <p>Today, Shkodra is renowned for its intellectual tradition, lively arts scene, and as a base for exploring the spectacular surrounding nature. The city's pedestrian-friendly center is filled with cafes, restaurants, and cultural institutions that buzz with energy day and night.</p>
+            </div>
+            <div class="about-image">
+                <img src="/images/shkodra2.jpg" alt="Shkodra city view">
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="container">
+        <h2 class="section-title">Explore Shkodra on the Map</h2>
+        <div id="map"></div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="container">
+        <h2 class="section-title">Must-See Attractions</h2>
+        <div class="highlights">
+            <div class="highlight-card">
+                <div class="highlight-image">
+                    <img src="/images/shkodra3.jpg" alt="Rozafa Castle">
+                </div>
+                <div class="highlight-content">
+                    <h3>Rozafa Castle</h3>
+                    <p>This legendary fortress offers panoramic views of Shkodra, Lake Shkodra, and the surrounding mountains. The castle dates back to Illyrian times and is steeped in myth and history.</p>
+
+                </div>
+            </div>
+            
+            <div class="highlight-card">
+                <div class="highlight-image">
+                    <img src="/images/shkodra4.jpg" alt="Lake Shkodra">
+                </div>
+                <div class="highlight-content">
+                    <h3>Lake Shkodra</h3>
+                    <p>The largest lake in Southern Europe, shared with Montenegro. Take a boat tour to explore its tranquil waters, rich birdlife, and picturesque fishing villages along the shore.</p>
+                </div>
+            </div>
+            
+            <div class="highlight-card">
+                <div class="highlight-image">
+                    <img src="/images/shkodra2.jpg" alt="Shkodra Historic Center">
+                </div>
+                <div class="highlight-content">
+                    <h3>Historic Center</h3>
+                    <p>Wander through Shkodra's pedestrian streets lined with Ottoman-era buildings, Catholic churches, and the famous "Photo Gallery" documenting Albania's communist past.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Visitors Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Shkodra surprised me with its vibrant cultural scene and stunning natural surroundings. Rozafa Castle at sunset is one of the most beautiful sights I've seen in the Balkans."</p>
+                    <div class="testimonial-author">- Sarah, UK</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The hospitality in Shkodra is incredible. The locals made us feel so welcome, and the food was amazing. Don't miss the fresh fish from Lake Shkodra!"</p>
+                    <div class="testimonial-author">- Marco, Italy</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"As a history buff, I was fascinated by Shkodra's rich past. The mix of Illyrian, Venetian, and Ottoman influences makes it truly unique in Albania."</p>
+                    <div class="testimonial-author">- Thomas, Germany</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([42.0685, 19.5119], 13);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add markers for key locations
+        const castleMarker = L.marker([42.0465, 19.4936]).addTo(map)
+            .bindPopup("<b>Rozafa Castle</b><br>Historic fortress with panoramic views");
+            
+        const lakeMarker = L.marker([42.0700, 19.45]).addTo(map)
+            .bindPopup("<b>Lake Shkodra</b><br>Largest lake in Southern Europe");
+            
+        const centerMarker = L.marker([42.0667, 19.5167]).addTo(map)
+            .bindPopup("<b>Shkodra City Center</b><br>Historic pedestrian area with cafes and shops");
+
+        // Add a circle to show city center
+        L.circle([42.0667, 19.5167], {
+            color: '#3498db',
+            fillColor: '#2980b9',
+            fillOpacity: 0.2,
+            radius: 1000
+        }).addTo(map).bindPopup("Central Shkodra");
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: admin-backend
+    runtime: node
+    buildCommand: cd admin-backend && npm install
+    startCommand: cd admin-backend && npm start
+    envVars:
+      - key: ENV
+        value: production

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albanian Destinations | Travel Albania</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/destination.css">
+<!-- In your <head> tag -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
+
+</head>
+<body>
+    
+<!--Header -->
+<header class="header">
+    <a href="homepage.html" class="logo"> <i class="fas fa-hiking"></i> travel. </a>
+    <nav class="navbar">
+        <div id="nav-close" class="fas fa-times"></div>
+        <a href="homepage.html">Home</a>
+        <a href="/About-us.html">About Us</a>
+        <a href="/destination.html">Destinations</a>
+        <a href="/contact.html">Contact</a>
+   </nav>
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </div>
+</header>
+
+<!-- Destination Hero Section -->
+<section class="destination-hero">
+    <div class="hero-content">
+        <h1>Discover Albania's Hidden Gems</h1>
+        <p>Explore breathtaking landscapes, ancient history, and vibrant culture</p>
+    </div>
+</section>
+
+<!-- API Integration Section -->
+<section class="api-section">
+    <div class="api-container">
+        <!-- Weather API -->
+        <!-- Weather API - Multi-city Carousel -->
+<div class="api-box weather-box">
+    <h2><i class="fas fa-cloud-sun"></i> Weather Across Albania</h2>
+    <div class="weather-carousel swiper">
+        <div class="swiper-wrapper" id="weather-data">
+            <div class="swiper-slide weather-loading">
+                <i class="fas fa-spinner fa-spin"></i> Loading weather data...
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <!-- Currency Converter -->
+        <div class="api-box currency-box">
+            <h2><i class="fas fa-money-bill-wave"></i> Currency Exchange</h2>
+            <div id="currency-data">
+                <div class="currency-form">
+                    <input type="number" id="amount" placeholder="Amount" value="1">
+                    <select id="from-currency">
+                        <option value="EUR">EUR</option>
+                        <option value="USD">USD</option>
+                        <option value="GBP">GBP</option>
+                    </select>
+                    <span>to</span>
+                    <select id="to-currency">
+                        <option value="ALL">ALL (Lek)</option>
+                        <option value="EUR">EUR</option>
+                        <option value="USD">USD</option>
+                    </select>
+                    <button id="convert-btn">Convert</button>
+                </div>
+                <div id="conversion-result"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dynamic Gallery from Unsplash -->
+<section class="gallery-section">
+    <h2 class="section-title">Albania Through the Lens</h2>
+    <div class="gallery-container" id="unsplash-gallery">
+        <!-- Images will be loaded dynamically from Unsplash API -->
+        <div class="gallery-loading">
+            <i class="fas fa-spinner fa-spin"></i> Loading beautiful images of Albania...
+        </div>
+    </div>
+</section>
+
+<!-- Popular Destinations -->
+<section class="popular-destinations">
+    <h2 class="section-title">Must-Visit Places in Albania</h2>
+    <div class="destination-grid">
+        <!-- Destination 1 -->
+        <div class="destination-card">
+            <div class="card-image" style="background-image: url('/images/destinationTirana.jpg');">
+                <div class="card-overlay">
+                    <h3>Tirana</h3>
+                </div>
+            </div>
+            <div class="card-content">
+                <p>Albania's vibrant capital with colorful buildings, bustling cafes, and rich history.</p>
+                <a href="#" class="btn">Explore Tirana</a>
+            </div>
+        </div>
+        
+        <!-- Destination 2 -->
+        <div class="destination-card">
+            <div class="card-image" style="background-image: url('/images/destinationalbanianalps.jpg');">
+                <div class="card-overlay">
+                    <h3>Albanian Alps</h3>
+                </div>
+            </div>
+            <div class="card-content">
+                <p>Breathtaking mountain scenery, perfect for hiking and nature lovers.</p>
+                <a href="#" class="btn">Explore the Alps</a>
+            </div>
+        </div>
+        
+        <!-- Destination 3 -->
+        <div class="destination-card">
+            <div class="card-image" style="background-image: url('/images/destinationksamil.jpg');">
+                <div class="card-overlay">
+                    <h3>Ksamil Beaches</h3>
+                </div>
+            </div>
+            <div class="card-content">
+                <p>Crystal clear waters and pristine beaches in the Albanian Riviera.</p>
+                <a href="#" class="btn">Explore Ksamil</a>
+            </div>
+        </div>
+        
+        <!-- Destination 4 -->
+        <div class="destination-card">
+            <div class="card-image" style="background-image: url('/images/destinationBerat.jpg');">
+                <div class="card-overlay">
+                    <h3>Berat</h3>
+                </div>
+            </div>
+            <div class="card-content">
+                <p>The "City of a Thousand Windows", a UNESCO World Heritage site.</p>
+                <a href="#" class="btn">Explore Berat</a>
+            </div>
+        </div>
+        <!-- Destination 5 -->
+        <div class="destination-card">
+            <div class="card-image" style="background-image: url('/images/destinationshkoder.jpg');">
+                <div class="card-overlay">
+                      <h3>Shkodra</h3>
+                </div>
+            </div>
+                <div class="card-content">
+                        <p>Historic charm and natural beauty around Shkodra. Explore the vast waters of Lake Shkodra, the ancient Rozafa Castle, and the city's vibrant cultural scene.</p>
+                        <a href="/shkodra.html" class="btn">Explore Shkodra</a>
+                </div>
+        </div>
+    </div>
+</section>
+
+<!-- Put this on your page BEFORE the script below -->
+<div id="webchat" style="width: 500px; height: 500px;"></div>
+
+<!-- Footer_Section -->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="homepage.html"> <i class="fas fa-chevron-right"></i> Home</a>
+            <a href="/About-us.html"> <i class="fas fa-chevron-right"></i> About Us</a>
+            <a href="/destination.html"> <i class="fas fa-chevron-right"></i> Destinations</a>
+            <a href="/contact.html"> <i class="fas fa-chevron-right"></i> Contact</a>
+        </div>
+
+        <div class="box">
+            <h3>Contact Info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +355-69-222-444 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +355-69-555-777 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> info@travel.al </a>
+            <a href="#"> <i class="fas fa-map"></i> Shkoder, Albania 4001 </a>
+        </div>
+
+        <div class="box">
+            <h3>Follow Us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> Facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> Twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> Instagram </a>
+        </div>
+    </div>
+</section>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="js/destination.js"></script>
+<!-- Scripts -->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script>
+    window.botpress.init({
+      botId: "53e95738-1188-4c72-ada7-bda917e8b5c0",
+      clientId: "beb40d0a-f371-4b59-a8c9-d926513cca09",
+      selector: "#webchat"
+    });
+
+    window.botpress.on("webchat:ready", () => {
+      window.botpress.open();
+    });
+  </script>
+</body> 
+</html>

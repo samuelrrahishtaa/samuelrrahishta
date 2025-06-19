@@ -1,0 +1,350 @@
+/* Modern Green & White Color Scheme */
+:root {
+    --primary-color: #2e7d32; /* Deep green */
+    --secondary-color: #4caf50; /* Medium green */
+    --light-green: #8bc34a; /* Light green */
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --dark-gray: #333333;
+    --text-color: #424242;
+}
+
+/* Destination Hero Section */
+.destination-hero {
+    background: linear-gradient(rgba(141, 140, 140, 0.5), rgba(142, 142, 142, 0.5)), 
+                url('/images/destination1.jpeg') no-repeat center center;
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 2rem;
+}
+
+.destination-hero .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.destination-hero .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* API Section */
+.api-section {
+    background-color: var(--light-gray);
+    padding: 4rem 2rem;
+}
+
+.api-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.api-box {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.api-box:hover {
+    transform: translateY(-5px);
+}
+
+.api-box h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Weather Box */
+.weather-box {
+    border-top: 5px solid var(--secondary-color);
+}
+
+#weather-data {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.weather-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.weather-icon {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.weather-temp {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+
+.weather-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.weather-detail {
+    background: var(--light-gray);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Currency Box */
+.currency-box {
+    border-top: 5px solid var(--light-green);
+}
+
+.currency-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto 1fr;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.currency-form input, .currency-form select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.currency-form button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.currency-form button:hover {
+    background: var(--secondary-color);
+}
+
+#conversion-result {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: 5px;
+}
+
+/* Map Section */
+.map-section {
+    padding: 4rem 2rem;
+    background: var(--white);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-size: 2rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--secondary-color);
+    margin: 0.5rem auto 0;
+}
+
+#albania-map {
+    height: 500px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 4rem 2rem;
+    background: var(--light-gray);
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Popular Destinations */
+.popular-destinations {
+    padding: 4rem 2rem;
+    background: var(--white);
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.destination-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 1.5rem;
+    color: var(--white);
+}
+
+.card-overlay h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content p {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Loading States */
+.weather-loading, .gallery-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 2rem;
+    color: var(--text-color);
+}
+
+.fa-spinner {
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .destination-hero .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .destination-hero .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    .api-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .currency-form {
+        grid-template-columns: 1fr;
+    }
+    
+    #albania-map {
+        height: 300px;
+    }
+}
+.header.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header.scrolled a {
+    color: #000; /* Change link color to black for contrast */
+}
+
+.header.scrolled .logo,
+.header.scrolled .fas {
+    color: #000; /* Icon colors */
+}
