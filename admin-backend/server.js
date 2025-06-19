@@ -20,19 +20,19 @@ app.use('/javascript', express.static(path.join(__dirname, '../js')));
 app.use('/images', express.static(path.join(__dirname, '../images')));
 // Serve homepage.html at root URL
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../homepage.html'));
+  res.sendFile(path.join(__dirname, '/homepage.html'));
 });
 // Serve other HTML pages directly
 app.get('/about', (req, res) => {
-  res.sendFile(path.join(__dirname, '../About-us.html'));
+  res.sendFile(path.join(__dirname, '/About-us.html'));
 });
 
 app.get('/contact', (req, res) => {
-  res.sendFile(path.join(__dirname, '../contact.html'));
+  res.sendFile(path.join(__dirname, '/contact.html'));
 });
 
 app.get('/destination', (req, res) => {
-  res.sendFile(path.join(__dirname, '../destination.html'));
+  res.sendFile(path.join(__dirname, '/destination.html'));
 });
 // Login endpoint
 app.post('/api/login', (req, res) => {
