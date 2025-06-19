@@ -14,6 +14,10 @@ const ADMIN_CREDENTIALS = {
     password: 'admin'
 };
 
+// Serve static folders
+app.use('/css', express.static(path.join(__dirname, '../css')));
+app.use('/javascript', express.static(path.join(__dirname, '../js')));
+app.use('/images', express.static(path.join(__dirname, '../images')));
 // Serve homepage.html at root URL
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../homepage.html'));
