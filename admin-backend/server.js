@@ -24,15 +24,15 @@ app.get('/', (req, res) => {
 });
 // Serve other HTML pages directly
 app.get('/about', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../About-us.html'));
+  res.sendFile(path.join(__dirname, '../About-us.html'));
 });
 
 app.get('/contact', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../contact.html'));
+  res.sendFile(path.join(__dirname, '../contact.html'));
 });
 
 app.get('/destination', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../destination.html'));
+  res.sendFile(path.join(__dirname, '../destination.html'));
 });
 // Login endpoint
 app.post('/api/login', (req, res) => {
