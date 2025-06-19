@@ -22,17 +22,19 @@ app.use('/images', express.static(path.join(__dirname, '../images')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../homepage.html'));
 });
-// Serve other HTML pages directly
+// About Us page
 app.get('/about', (req, res) => {
-  res.sendFile(path.join(__dirname, './About-us.html'));
+  res.sendFile(path.join(__dirname, '../About-us.html'));
 });
 
+// Contact page
 app.get('/contact', (req, res) => {
-  res.sendFile(path.join(__dirname, './contact.html'));
+  res.sendFile(path.join(__dirname, '../contact.html'));
 });
 
+// Destination page
 app.get('/destination', (req, res) => {
-  res.sendFile(path.join(__dirname, './destination.html'));
+  res.sendFile(path.join(__dirname, '../destination.html'));
 });
 // Login endpoint
 app.post('/api/login', (req, res) => {
