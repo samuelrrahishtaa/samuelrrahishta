@@ -20,7 +20,7 @@ app.use('/javascript', express.static(path.join(__dirname, '../js')));
 app.use('/images', express.static(path.join(__dirname, '../images')));
 // Serve homepage.html at root URL
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../homepage.html'));
+  res.sendFile(path.join(__dirname, '../homepage.html'));
 });
 // Serve other HTML pages directly
 app.get('/about', (req, res) => {
