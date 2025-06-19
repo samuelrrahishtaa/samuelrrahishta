@@ -36,6 +36,10 @@ app.get('/contact', (req, res) => {
 app.get('/destination', (req, res) => {
   res.sendFile(path.join(__dirname, '../destination.html'));
 });
+
+app.get('/admin-dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, '../admin-dashboard.html'));
+});
 // Login endpoint
 app.post('/api/login', (req, res) => {
     const { username, password } = req.body;
