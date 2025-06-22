@@ -16,7 +16,7 @@ const ADMIN_CREDENTIALS = {
 
 // Serve static folders
 app.use('/css', express.static(path.join(__dirname, '../css')));
-app.use('/javascript', express.static(path.join(__dirname, '../js')));
+app.use('/js', express.static(path.join(__dirname, '../js')));
 app.use('/images', express.static(path.join(__dirname, '../images')));
 // Serve homepage.html at root URL
 app.get('/', (req, res) => {
@@ -39,6 +39,19 @@ app.get('/destination', (req, res) => {
 
 app.get('/admin-dashboard', (req, res) => {
   res.sendFile(path.join(__dirname, '../admin-dashboard.html'));
+});
+
+app.get('/shkodra', (req, res) => {
+  res.sendFile(path.join(__dirname, '../shkodra.html'));
+});
+app.get('/5amazingplaces', (req, res) => {
+  res.sendFile(path.join(__dirname, '../5_amazing_places.html'));
+});
+app.get('/5reasons', (req, res) => {
+  res.sendFile(path.join(__dirname, '../5reasons.html'));
+});
+app.get('/albanianalps', (req, res) => {
+  res.sendFile(path.join(__dirname, '../albanian_alps.html'));
 });
 // Login endpoint
 app.post('/api/login', (req, res) => {
