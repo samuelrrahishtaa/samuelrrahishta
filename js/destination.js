@@ -1,7 +1,8 @@
+require('dotenv').config();
 
 // Fetch Weather Data from OpenWeatherMap
 async function fetchWeatherData() {
-    const apiKey = '6cb31db9df519039c69a8a03041a9e35'; // Replace with your API key
+    const apiKey = process.env.WeatherApi; // Replace with your API key
     const city = 'Tirana'; // Default city
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     

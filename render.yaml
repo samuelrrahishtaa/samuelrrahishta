@@ -3,7 +3,7 @@ services:
     name: admin-backend
     runtime: node
     buildCommand: cd admin-backend && npm install
-    startCommand: cd admin-backend && npm start
+    startCommand: cd admin-backend && node server.js
     envVars:
       - key: ENV
         value: production
